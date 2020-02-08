@@ -9,12 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let viewModel = MainMenuViewModel()
+    @IBOutlet weak var homeTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.homeTableView.delegate = self
+        self.homeTableView.dataSource = self
+        setupNavigation() //function on extension
     }
-
-
 }
-
